@@ -6,10 +6,10 @@ cmd = 'mecab test -o test_result';
 hoge = function(){
 	return exec(cmd,{timeout:1000},
 		function(error,stdout,stderr){
-			console.log('stdout:'+(stdout||'none'));
-			console.log('stderr:'+(stderr||'none'));
+			//console.log('stdout:'+(stdout||'none'));
+			//console.log('stderr:'+(stderr||'none'));
 			if(error != null){
-				console.log('exec error:'+error);
+				//console.log('exec error:'+error);
 			}
 		}
 	)
@@ -17,14 +17,17 @@ hoge = function(){
 
 check = function(){
 	fs.readFile('./test_result','utf8',function(err,text){
-		console.log(text);
-		console.log('error:'+(err||'none'));
+		//console.log(text);
+		//console.log('error:'+(err||'none'));
 	});
 };
 
 onebyone = function(){
 	console.log('start onebyone');	fs.readFileSync('./test_result','utf8').toString().split('\n').forEach(function(line){
 		line.split(',').forEach(function(line){
+			line.split(' ').forEach(function(line){
+				console.log(line);
+			});
 			console.log(line);
 		});
 		console.log(line);
