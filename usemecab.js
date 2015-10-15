@@ -22,5 +22,13 @@ check = function(){
 	});
 };
 
+onebyone = function(){
+	console.log('start onebyone');
+	fs.readFileSync(infile).toString().split('\n').forEach(function(line){
+		console.log(line);
+	});
+};
+
 hoge();
 check();
+onebyone();
