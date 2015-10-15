@@ -25,11 +25,14 @@ check = function(){
 onebyone = function(){
 	console.log('start onebyone');	fs.readFileSync('./test_result','utf8').toString().split('\n').forEach(function(line){
 		line.split(',').forEach(function(line){
-			line.split(' ').forEach(function(line){
+			line.split('　').forEach(function(line){
+				console.log('　を切るよ');
 				console.log(line);
 			});
+			console.log(',を切るよ');
 			console.log(line);
 		});
+		console.log('改行を切るよ');
 		console.log(line);
 	});
 };
