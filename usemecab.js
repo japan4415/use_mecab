@@ -92,7 +92,7 @@ count_up = function(count){
 }
 
 //以降の処理をcurlの中に格納、暫定処理
-return exec(cmd2 + url,{timeout:1000},function(error,stdout,stderr){
+exec(cmd2 + url,{timeout:1000},function(error,stdout,stderr){
 		console.log('stdout:'+(stdout||'none'));
 		console.log('stderr:'+(stderr||'none'));
 		if(error != null){
