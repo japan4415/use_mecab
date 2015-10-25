@@ -68,7 +68,7 @@ get_meishi = function(words){
 	words.forEach(function(line){
 		if(line.hinshi == "名詞"){
 			count.push(new in_count(words.hyoso));
-			console.log("名詞だー格納しよっと");
+			console.log("名詞だー"words.hyoso"を格納しよっと");
 		}
 	});
 }
