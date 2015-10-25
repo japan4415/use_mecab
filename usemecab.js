@@ -31,7 +31,7 @@ onebyone = function(){
 		words[i] = in_words;
 		var i2 = 0;
 		line.replace(/\t/,',').split(',').forEach(function(line){
-			in_words[i2] = line;
+			words[i].in_words[i2] = line;
 			i2++;
 		});
 	});
