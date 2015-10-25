@@ -75,7 +75,7 @@ get_meishi = function(words){
 
 count_up = function(count){
 	count.forEach(function(line){
-		words.for(function(line2){
+		words.forEach(function(line2){
 			if(line.hyoso == line2.hyoso){
 				line.wcount++;
 			}
