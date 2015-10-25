@@ -114,4 +114,4 @@ get_meishi(words);
 count_up(count);
 
 if("\\\\" == /[\\]+/){console.log("あってるよ");}
-else{cosole.log("違ってるよ");}
+else{console.log("違ってるよ");}
