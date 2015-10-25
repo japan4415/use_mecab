@@ -77,8 +77,10 @@ count_up = function(count){
 	count.forEach(function(line){
 		words.forEach(function(line2){
 			if(line.hyoso == line2.hyoso){
-				line.wcount++;
-				console.log(line.hyoso + "があったのでカウント");
+				if(line.hinshi == "名詞"){
+					line.wcount++;
+					console.log(line.hyoso + "があったのでカウント");
+				}
 			}
 		});
 	});
