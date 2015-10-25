@@ -20,7 +20,7 @@ function in_words(){
 }
 
 var count = [];
-var in_function(hyoso){
+function in_function(hyoso){
 	this.hyoso = hyoso;
 	this.wcout = 0;
 }
