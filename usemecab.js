@@ -19,6 +19,12 @@ function in_words(){
 	this.hatuon = null;
 }
 
+var count = [];
+var in_function(hyoso){
+	this.hyoso = hyoso;
+	this.wcout = 0;
+}
+
 //mecabにtestを投げてtest_resultを受け取る
 mecab = function(){
 	return exec(cmd,{timeout:1000},
@@ -58,5 +64,26 @@ onebyone = function(){
 	//console.log(words);
 };
 
+get_meishi = function(words){
+	words.forEach(function(line){
+		if(words.hinshi == "名詞"){
+			count.push(new in_function(words.hyoso));
+			console.log("名詞だー格納しよっと");
+		}
+	});
+}
+
+count_up = function(count){
+	count.forEach(function(line){
+		words.for(function(line2){
+			if(line.hyoso == line2.hyoso){
+				line.wcount++;
+			}
+		});
+	});
+	console.log(count);
+}
+
 mecab();
 onebyone();
+get_meishi(words);
