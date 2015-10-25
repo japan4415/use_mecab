@@ -87,3 +87,4 @@ count_up = function(count){
 mecab();
 onebyone();
 get_meishi(words);
+count_up(count);
