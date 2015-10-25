@@ -3,8 +3,8 @@ var fs = require('fs');
 
 cmd = 'mecab test -o test_result';
 
-var words;
-var in_words;
+var words = [];
+var in_words = [];
 
 mecab = function(){
 	return exec(cmd,{timeout:1000},
