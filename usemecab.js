@@ -45,7 +45,7 @@ onebyone = function(){
 	var i = 0;
 	fs.readFileSync('./test_result','utf8').toString().split('\n').forEach(function(line){
 		line = line.replace(/\w+/,'');
-		console.log(line);
+		//console.log(line);
 		words[i] = new in_words();
 		i2 = 0;
 		line.replace(/\t/,',').split(',').forEach(function(line){
