@@ -20,7 +20,7 @@ function in_words(){
 }
 
 var count = [];
-function in_function(hyoso){
+function in_count(hyoso){
 	this.hyoso = hyoso;
 	this.wcout = 0;
 }
@@ -67,7 +67,7 @@ onebyone = function(){
 get_meishi = function(words){
 	words.forEach(function(line){
 		if(words.hinshi == "名詞"){
-			count.push(new in_function(words.hyoso));
+			count.push(new in_count(words.hyoso));
 			console.log("名詞だー格納しよっと");
 		}
 	});
@@ -81,7 +81,9 @@ count_up = function(count){
 			}
 		});
 	});
-	console.log(count);
+	console.log(words);
+	console.log(words[0].hyoso);
+	console.log("countを表示しますよ" + count);
 }
 
 mecab();
