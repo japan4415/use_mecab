@@ -2,6 +2,8 @@ var exec = require('child_process').exec,cmd;
 var fs = require('fs');
 
 cmd = 'mecab test -o test_result';
+cmd2 = 'curl -o test ';
+url = 'http://takuya-1st.hatenablog.jp/entry/20121121/1353477494';
 
 //wordsの下にin_wordsの内容が置いてある感じ
 //words[n]で何番目の文字が指定が出来る
@@ -23,6 +25,12 @@ var count = [];
 function in_count(hyoso){
 	this.hyoso = hyoso;
 	this.wcount = 0;
+}
+
+curl = function(url){
+	return exec(cmd2 + url,{timeout:1000},function(error,stdout,stderr){
+
+	});
 }
 
 //mecabにtestを投げてtest_resultを受け取る
@@ -89,6 +97,7 @@ count_up = function(count){
 	console.log(count);
 }
 
+curl(url);
 mecab();
 onebyone();
 get_meishi(words);
