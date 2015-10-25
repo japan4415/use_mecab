@@ -44,7 +44,7 @@ mecab = function(){
 onebyone = function(){
 	var i = 0;
 	fs.readFileSync('./test_result','utf8').toString().split('\n').forEach(function(line){
-		line = line.replace(/\w+/,'');
+		line = line.replace(/[!-~]/,'');
 		console.log(line);
 		words[i] = new in_words();
 		i2 = 0;
