@@ -29,7 +29,11 @@ function in_count(hyoso){
 
 curl = function(url){
 	return exec(cmd2 + url,{timeout:1000},function(error,stdout,stderr){
-
+			console.log('stdout:'+(stdout||'none'));
+			console.log('stderr:'+(stderr||'none'));
+			if(error != null){
+				console.log('exec error:'+error);
+			}
 	});
 }
 
