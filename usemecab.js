@@ -78,6 +78,7 @@ count_up = function(count){
 		words.forEach(function(line2){
 			if(line.hyoso == line2.hyoso){
 				line.wcount++;
+				console.log(line.hyoso + "があったのでカウント");
 			}
 		});
 	});
