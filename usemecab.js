@@ -43,19 +43,20 @@ onebyone = function(){
 		i2 = 0;
 		line.replace(/\t/,',').split(',').forEach(function(line){
 			switch (i2){
-				case 1:line = words[i].hyoso;
-				case 2:line = words[i].hinshi;
-				case 3:line = words[i].hinshi1;
-				case 4:line = words[i].hinshi2;
-				case 5:line = words[i].hinshi3;
-				case 6:line = words[i].katuyokei;
-				case 7:line = words[i].katuyogata
-				case 8:line = words[i].genke;
-				case 9:line = words[i].yomi;
-				case 10:line = words[i].hatuon;
+				case 0:line = words[i].hyoso;
+				case 1:line = words[i].hinshi;
+				case 2:line = words[i].hinshi1;
+				case 3:line = words[i].hinshi2;
+				case 4:line = words[i].hinshi3;
+				case 5:line = words[i].katuyokei;
+				case 6:line = words[i].katuyogata
+				case 7:line = words[i].genke;
+				case 8:line = words[i].yomi;
+				case 9:line = words[i].hatuon;
 			}
 			i2++;
 		});
+		i++;
 	});
 	console.log(words);
 };
