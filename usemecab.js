@@ -27,20 +27,6 @@ function in_count(hyoso){
 	this.wcount = 0;
 }
 
-curl = function(url){
-	return exec(cmd2 + url,{timeout:1000},function(error,stdout,stderr){
-			console.log('stdout:'+(stdout||'none'));
-			console.log('stderr:'+(stderr||'none'));
-			if(error != null){
-				console.log('exec error:'+error);
-			}
-	});
-	mecab();
-	onebyone();
-	get_meishi(words);
-	count_up(count);
-}
-
 //mecabにtestを投げてtest_resultを受け取る
 mecab = function(){
 	return exec(cmd,{timeout:1000},
@@ -105,5 +91,17 @@ count_up = function(count){
 	console.log(count);
 }
 
-curl(url);
 //以降の処理をcurlの中に格納、暫定処理
+return exec(cmd2 + url,{timeout:1000},function(error,stdout,stderr){
+		console.log('stdout:'+(stdout||'none'));
+		console.log('stderr:'+(stderr||'none'));
+		if(error != null){
+			console.log('exec error:'+error);
+		}
+});
+
+//以下処理
+mecab();
+onebyone();
+get_meishi(words);
+count_up(count);
