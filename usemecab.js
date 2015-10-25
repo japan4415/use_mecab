@@ -28,7 +28,7 @@ check = function(){
 onebyone = function(){
 	var i = 0
 	fs.readFileSync('./test_result','utf8').toString().split('\n').forEach(function(line){
-		words[i] = in_words;
+		words[i] = in_words[];
 		var i2 = 0;
 		line.replace(/\t/,',').split(',').forEach(function(line){
 			words[i].in_words[i2] = line;
