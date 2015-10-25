@@ -24,7 +24,7 @@ check = function(){
 
 onebyone = function(){
 	console.log('start onebyone');	fs.readFileSync('./test_result','utf8').toString().split('\n').forEach(function(line){
-		line.replace(/\t+/,',');
+		line.replace(/\t/,',');
 		console.log(line);
 		line.split(',').forEach(function(line){
 				console.log(line);
