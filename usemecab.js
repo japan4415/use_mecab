@@ -44,6 +44,7 @@ mecab = function(){
 onebyone = function(){
 	var i = 0;
 	fs.readFileSync('./test_result','utf8').toString().split('\n').replace(/[a-z]+/,'').forEach(function(line){
+	  console.log(line);
 		words[i] = new in_words();
 		i2 = 0;
 		line.replace(/\t/,',').split(',').forEach(function(line){
@@ -70,7 +71,7 @@ get_meishi = function(words){
 	words.forEach(function(line){
 		if(line.hinshi == "名詞"){
 			count.push(new in_count(line.hyoso));
-			console.log("名詞だー" + line.hyoso + "を格納しよっと");
+			//console.log("名詞だー" + line.hyoso + "を格納しよっと");
 		}
 	});
 }
@@ -81,7 +82,7 @@ count_up = function(count){
 			if(line.hyoso == line2.hyoso){
 				if(line2.hinshi == "名詞"){
 					line.wcount++;
-					console.log(line.hyoso + "があったのでカウント");
+					//console.log(line.hyoso + "があったのでカウント");
 				}
 			}
 		});
