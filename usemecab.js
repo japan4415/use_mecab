@@ -66,7 +66,7 @@ onebyone = function(){
 
 get_meishi = function(words){
 	words.forEach(function(line){
-		if(words.hinshi == "名詞"){
+		if(line.hinshi == "名詞"){
 			count.push(new in_count(words.hyoso));
 			console.log("名詞だー格納しよっと");
 		}
@@ -81,8 +81,8 @@ count_up = function(count){
 			}
 		});
 	});
-	console.log(words);
-	console.log(words[0].hyoso);
+	//console.log(words);
+	console.log(words[0].hinshi);
 	console.log("countを表示しますよ" + count);
 }
 
