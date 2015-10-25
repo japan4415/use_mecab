@@ -3,6 +3,8 @@ var fs = require('fs');
 
 cmd = 'mecab test -o test_result';
 
+//wordsの下にin_wordsの内容が置いてある感じ
+//words[n]で何番目の文字が指定が出来る
 var words = [];
 function in_words(){
 	this.hyoso = null;
@@ -17,6 +19,7 @@ function in_words(){
 	this.hatuon = null;
 }
 
+//mecabにtestを投げてtest_resultを受け取る
 mecab = function(){
 	return exec(cmd,{timeout:1000},
 		function(error,stdout,stderr){
@@ -29,13 +32,7 @@ mecab = function(){
 	)
 };
 
-check = function(){
-	fs.readFile('./test_result','utf8',function(err,text){
-		//console.log(text);
-		//console.log('error:'+(err||'none'));
-	});
-};
-
+//結果を読み込んでそいつを単語単位にしてwordsにぶち込む
 onebyone = function(){
 	var i = 0;
 	fs.readFileSync('./test_result','utf8').toString().split('\n').forEach(function(line){
@@ -58,9 +55,8 @@ onebyone = function(){
 		});
 		i++;
 	});
-	console.log(words);
+	//console.log(words);
 };
 
 mecab();
-check();
 onebyone();
