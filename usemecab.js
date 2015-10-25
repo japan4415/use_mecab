@@ -35,6 +35,10 @@ curl = function(url){
 				console.log('exec error:'+error);
 			}
 	});
+	mecab();
+	onebyone();
+	get_meishi(words);
+	count_up(count);
 }
 
 //mecabにtestを投げてtest_resultを受け取る
@@ -102,7 +106,4 @@ count_up = function(count){
 }
 
 curl(url);
-mecab();
-onebyone();
-get_meishi(words);
-count_up(count);
+//以降の処理をcurlの中に格納、暫定処理
