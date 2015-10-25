@@ -43,8 +43,9 @@ mecab = function(){
 //結果を読み込んでそいつを単語単位にしてwordsにぶち込む
 onebyone = function(){
 	var i = 0;
-	fs.readFileSync('./test_result','utf8').toString().split('\n').replace(/\w+/,' ').forEach(function(line){
-	  console.log(line);
+	fs.readFileSync('./test_result','utf8').toString().split('\n').forEach(function(line){
+		line = line.replace(/\w+/,'');
+		console.log(line);
 		words[i] = new in_words();
 		i2 = 0;
 		line.replace(/\t/,',').split(',').forEach(function(line){
