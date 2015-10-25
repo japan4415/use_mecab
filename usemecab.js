@@ -82,8 +82,8 @@ count_up = function(count){
 		});
 	});
 	//console.log(words);
-	console.log(words[0].hinshi);
-	console.log("countを表示しますよ" + count);
+	//console.log(words[0].hinshi);
+	console.log(count[1]);
 }
 
 mecab();
