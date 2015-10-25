@@ -3,7 +3,10 @@ var fs = require('fs');
 
 cmd = 'mecab test -o test_result';
 
-hoge = function(){
+var words;
+var in_words;
+
+mecab = function(){
 	return exec(cmd,{timeout:1000},
 		function(error,stdout,stderr){
 			//console.log('stdout:'+(stdout||'none'));
@@ -23,13 +26,18 @@ check = function(){
 };
 
 onebyone = function(){
-	console.log('start onebyone');	fs.readFileSync('./test_result','utf8').toString().split('\n').forEach(function(line){
+	var i = 0
+	fs.readFileSync('./test_result','utf8').toString().split('\n').forEach(function(line){
+		words[i] = in_words;
+		var i2 = 0;
 		line.replace(/\t/,',').split(',').forEach(function(line){
-				console.log(line);
+			in_words[i2] = line;
+			i2++;
 		});
 	});
+	console.log(words);
 };
 
-hoge();
+mecab();
 check();
 onebyone();
