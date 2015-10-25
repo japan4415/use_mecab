@@ -22,7 +22,7 @@ function in_words(){
 var count = [];
 function in_count(hyoso){
 	this.hyoso = hyoso;
-	this.wcout = 0;
+	this.wcount = 0;
 }
 
 //mecabにtestを投げてtest_resultを受け取る
