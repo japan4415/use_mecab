@@ -25,6 +25,7 @@ var count = [];
 function in_count(hyoso){
 	this.hyoso = hyoso;
 	this.wcount = 0;
+	this.hiritu = 0;
 }
 
 //mecabにtestを投げてtest_resultを受け取る
@@ -69,10 +70,9 @@ onebyone = function(){
 };
 
 get_meishi = function(words){
-	var check = 0;
 	words.forEach(function(line){
-		check = 0;
-		if(line.hinshi == "名詞" && line.hyoso != "" && line.hyoso.match(/^[^:/\\.=\[\]\(\)<>"!#;！?%{}'`+\$\*@&|]/)){
+		var check = 0;
+		if(line.hinshi == "名詞" && line.hyoso != "" && line.hyoso.match(/^[^:/\\.=\[\]\(\)<>"!#;！?%{}'`+\$\*@&|-]/)){
 			count.forEach(function(line2){
 				if(line2.hyoso == line.hyoso){
 					check = 1;
@@ -99,7 +99,16 @@ count_up = function(count){
 	});
 	//console.log(words);
 	//console.log(words[0].hinshi);
-	console.log(count);
+}
+
+count_hiritu = function(count){
+	var goke = 0;
+	count.forEach(function(line){
+		goke = goke + line.wcount;
+	});
+	count.forEach(function(line){
+		line.hiritu = line.wcount / goke * 100;
+	});
 }
 
 
@@ -116,4 +125,6 @@ exec(cmd2 + url,{timeout:1000},function(error,stdout,stderr){
 		onebyone();
 		get_meishi(words);
 		count_up(count);
+		count_hiritu(count);
+		console.log(count);
 });
