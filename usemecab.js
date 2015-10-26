@@ -113,5 +113,5 @@ onebyone();
 get_meishi(words);
 count_up(count);
 
-if("	".match(/\t)){console.log("あってるよ");}
+if("	".match(/\t/)){console.log("あってるよ");}
 else{console.log("違ってるよ");}
