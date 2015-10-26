@@ -113,5 +113,5 @@ onebyone();
 get_meishi(words);
 count_up(count);
 
-if("::" == /:abc+/){console.log("あってるよ");}
+if("::" == /[abc:]+/){console.log("あってるよ");}
 else{console.log("違ってるよ");}
