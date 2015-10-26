@@ -69,9 +69,10 @@ onebyone = function(){
 };
 
 get_meishi = function(words){
+	var check = 0;
 	words.forEach(function(line){
 		if(line.hinshi == "名詞" && line.hyoso != "" && line.hyoso.match(/^[^:/\\.=\[\]\(\)]/)){
-			var check = 0;
+			 check = 0;
 			count.forEach(function(line2){
 				if(line2.hyoso != line.hyoso){
 					check = 1;
