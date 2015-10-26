@@ -3,7 +3,7 @@ var fs = require('fs');
 
 cmd = 'mecab test -o test_result';
 cmd2 = 'curl -o test ';
-url = 'http://takuya-1st.hatenablog.jp/entry/20121121/1353477494';
+url = 'http://qiita.com/Hiraku/items/d74690088dfa368875c9';
 
 //wordsの下にin_wordsの内容が置いてある感じ
 //words[n]で何番目の文字が指定が出来る
