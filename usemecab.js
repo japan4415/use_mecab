@@ -75,7 +75,7 @@ get_meishi = function(words){
 		if(line.hinshi == "名詞" && line.hyoso != "" && line.hyoso.match(/^[^:/\\.=\[\]\(\)]/)){
 			count.forEach(function(line2){
 				if(line2.hyoso != line.hyoso){
-					check = 1;
+					check = 0;
 				}
 			});
 			if(check == 0){
