@@ -111,12 +111,9 @@ exec(cmd2 + url,{timeout:1000},function(error,stdout,stderr){
 		if(error != null){
 			console.log('exec error:'+error);
 		}
+		//以下処理
+		mecab();
+		onebyone();
+		get_meishi(words);
+		count_up(count);
 });
-
-
-
-//以下処理
-mecab();
-onebyone();
-get_meishi(words);
-count_up(count);
