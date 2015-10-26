@@ -80,7 +80,7 @@ get_meishi = function(words){
 			});
 			if(check == 0){
 				count.push(new in_count(line.hyoso));
-				console.log("名詞だー" + line.hyoso + "を格納しよっと");
+				//console.log("名詞だー" + line.hyoso + "を格納しよっと");
 			}
 		}
 	});
