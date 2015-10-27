@@ -1,4 +1,4 @@
-module.exports.chushutu = function(url_adress){
+chushutu = function(url_adress){
 
 	var exec = require('child_process').exec,cmd;
 	var fs = require('fs');
@@ -129,6 +129,6 @@ module.exports.chushutu = function(url_adress){
 			count_up(count);
 			count_hiritu(count);
 			//console.log(count);
-			return count;
+			fs.writeFile('1st.json',count);
 	});
 }
