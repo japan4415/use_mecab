@@ -143,4 +143,4 @@ chushutu = function(url_adress){
 	});
 }
 
-chushutu("http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q11111940906");
+chushutu("http://note.chiebukuro.yahoo.co.jp/detail/n133516");
