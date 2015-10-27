@@ -38,7 +38,7 @@ usemecab2.js
 var json1 = require('./1st.json');
 var json2 = require('./2st.json');
 
-var kikyaku = 1;
+var kikyaku = 0.5;
 
 function keisan(hyosoi,hiritui){
   this.hyoso = hyosoi;
