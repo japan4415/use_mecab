@@ -61,6 +61,9 @@ json2.forEach(function(line){
   }
 });
 
+console.log(json1_kikyaku);
+console.log(json2_kikyaku);
+
 
 json1_kikyaku.forEach(function(line){
   json2_kikyaku.forEach(function(line2){
