@@ -51,28 +51,27 @@ var ketugo = [];
 
 json1.forEach(function(line){
   if(line.hiritu >= kikyaku){
-    json1_kikyaku.push(keisan(line.hyoso,line.hiritu));
+    json1_kikyaku.push(new keisan(line.hyoso,line.hiritu));
   }
 });
 
 json2.forEach(function(line){
   if(line.hiritu >= kikyaku){
-    json2_kikyaku.push(keisan(line.hyoso,line.hiritu));
+    json2_kikyaku.push(new keisan(line.hyoso,line.hiritu));
   }
 });
 
-console.log(json1_kikyaku);
-/*
+
 json1_kikyaku.forEach(function(line){
   json2_kikyaku.forEach(function(line2){
     if(line.hyoso == line2.hyoso){
       if(line.hiritu > line2.hiritu){
         var kyotu = line.hiritu - (line.hiritu - line2.hiritu);
       }
-      ketugo.push(line.hyoso,kyotu);
+      ketugo.push(new keisan(line.hyoso,kyotu));
     }
   });
 });
-*/
 
-//console.log(ketugo);
+
+console.log(ketugo);
