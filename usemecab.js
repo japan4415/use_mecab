@@ -129,6 +129,6 @@ exports.chushutu = function(url_adress){
 			count_up(count);
 			count_hiritu(count);
 			//console.log(count);
-			return "foo";
+			return count;
 	});
 }

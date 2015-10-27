@@ -8,4 +8,4 @@ kekka = function(url){
 }
 
 kekka(url1);
-//console.log("これから表示するよ\n" + usemecab.chushutu(url1));
+console.log("これから表示するよ\n" + usemecab.chushutu(url1));
