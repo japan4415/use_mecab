@@ -134,5 +134,6 @@ chushutu = function(url_adress){
 				foo : 30,
 			};
 			fs.writeFile('1st.json',JSON.stringify(data));
+			console.log(count);
 	});
 }
