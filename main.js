@@ -68,10 +68,10 @@ json1_kikyaku.forEach(function(line){
       if(line.hiritu > line2.hiritu){
         var kyotu = line.hiritu - (line.hiritu - line2.hiritu);
       }
-      elseif(line.hiritu == line2.hiritu){
+      else if(line.hiritu == line2.hiritu){
         var kyotu = 0;
       }
-      elseif(line.hiritu < line2.hiritu){
+      else if(line.hiritu < line2.hiritu){
         var kyotu = line2.hiritu - (line2.hiritu - line.hiritu);
       }
       ketugo.push(new keisan(line.hyoso,kyotu));
