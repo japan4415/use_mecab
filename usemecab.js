@@ -135,6 +135,6 @@ chushutu_func = function(url_adress){
 			count_up(count);
 			count_hiritu(count);
 			console.log(count);
-			return count;
+			return "foo";
 	});
 }
