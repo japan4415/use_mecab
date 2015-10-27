@@ -89,6 +89,6 @@ console.log(ketugo);
 
 var goke = 0;
 ketugo.forEach(function(line){
-  goke = goke + line.hiritu;
+  goke = goke + line.hiritu * line.hyoso.length;
 });
 console.log("関係指数は　" + goke + "　です。");
