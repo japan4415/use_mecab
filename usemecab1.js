@@ -143,4 +143,4 @@ chushutu = function(url_adress){
 	});
 }
 
-chushutu("https://support.microsoft.com/ja-jp/kb/556085");
+chushutu("http://1210kazu.blog.fc2.com/blog-entry-5.html");
