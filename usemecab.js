@@ -137,3 +137,5 @@ chushutu = function(url_adress){
 			console.log(count);
 	});
 }
+
+chushutu("http://qiita.com/phi/items/b5ade0c2ecc58935e046");
