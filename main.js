@@ -45,9 +45,9 @@ function keisan(hyosoi,hiritui){
   this.hiritu = hiritui;
 }
 
-var json1_kikyaku[];
-var json2_kikyaku[];
-var ketugo[];
+var json1_kikyaku = [];
+var json2_kikyaku = [];
+var ketugo = [];
 
 json1.forEach(functon(line){
   if(line.hiritu >= kikyaku){
