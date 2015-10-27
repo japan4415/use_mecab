@@ -85,3 +85,14 @@ json1_kikyaku.forEach(function(line){
 
 
 console.log(ketugo);
+
+if(ketugo != null){
+  var goke = 0;
+  ketugo.forEach(function(line){
+    goke = goke + line.hiritu;
+  });
+  console.log("関係指数は　" + goke + "　です。");
+}
+else{
+  console.log("関係性は無いです。")
+}
