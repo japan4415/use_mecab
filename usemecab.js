@@ -31,6 +31,7 @@ chushutu = function(url_adress){
 	}
 
 	//mecabにtestを投げてtest_resultを受け取る
+	/*
 	mecab = function(){
 		return exec(cmd,{timeout:1000},
 			function(error,stdout,stderr){
@@ -40,8 +41,9 @@ chushutu = function(url_adress){
 					//console.log('exec error:'+error);
 				}
 			}
-		)
-	};
+		);
+	}
+	*/
 
 	//結果を読み込んでそいつを単語単位にしてwordsにぶち込む
 	onebyone = function(){
@@ -123,13 +125,21 @@ chushutu = function(url_adress){
 				//console.log('exec error:'+error);
 			}
 			//以下処理
-			mecab();
-			onebyone();
-			get_meishi(words);
-			count_up(count);
-			count_hiritu(count);
-			//console.log(count);
-			fs.writeFile('1st.json',JSON.stringify(count));
+			return exec(cmd,{timeout:1000},
+				function(error,stdout,stderr){
+					//console.log('stdout:'+(stdout||'none'));
+					//console.log('stderr:'+(stderr||'none'));
+					if(error != null){
+						//console.log('exec error:'+error);
+					}
+				}
+				onebyone();
+				get_meishi(words);
+				count_up(count);
+				count_hiritu(count);
+				//console.log(count);
+				fs.writeFile('1st.json',JSON.stringify(count));
+			);
 	});
 }
 
