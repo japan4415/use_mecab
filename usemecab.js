@@ -128,6 +128,7 @@ exports.chushutu = function(url_adress){
 			get_meishi(words);
 			count_up(count);
 			count_hiritu(count);
+			console.log(count);
 			return count;
 	});
 }
