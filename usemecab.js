@@ -129,6 +129,10 @@ chushutu = function(url_adress){
 			count_up(count);
 			count_hiritu(count);
 			//console.log(count);
-			fs.writeFile('1st.json',count);
+			var data = {
+				hoge : 100,
+				foo : 30,
+			};
+			fs.writeFile('1st.json',JSON.stringify(data));
 	});
 }
