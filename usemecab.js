@@ -1,5 +1,6 @@
 exports.chushutu = function(url_adress){
 	var exp = chushutu_func(url_adress);
+	console.log(exp);
 	return exp;
 }
 
@@ -134,7 +135,7 @@ chushutu_func = function(url_adress){
 			get_meishi(words);
 			count_up(count);
 			count_hiritu(count);
-			console.log(count);
-			return "foo";
+			//console.log(count);
+			return count;
 	});
 }
