@@ -61,6 +61,8 @@ json2.forEach(function(line){
   }
 });
 
+console.log(json1_kikyaku);
+/*
 json1_kikyaku.forEach(function(line){
   json2_kikyaku.forEach(function(line2){
     if(line.hyoso == line2.hyoso){
@@ -71,5 +73,6 @@ json1_kikyaku.forEach(function(line){
     }
   });
 });
+*/
 
-console.log(ketugo);
+//console.log(ketugo);
