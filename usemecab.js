@@ -1,6 +1,6 @@
 exports.chushutu = function(url_adress){
-	var exp = chushutu_func(url_adress);
-	return exp;
+	//var exp = chushutu_func(url_adress);
+	return "test";
 }
 
 
