@@ -49,13 +49,13 @@ var json1_kikyaku = [];
 var json2_kikyaku = [];
 var ketugo = [];
 
-json1.forEach(functon(line){
+json1.forEach(function(line){
   if(line.hiritu >= kikyaku){
     json1_kikyaku.push(keisan(line.hyoso,line.hiritu));
   }
 });
 
-json2.forEach(functon(line){
+json2.forEach(function(line){
   if(line.hiritu >= kikyaku){
     json2_kikyaku.push(keisan(line.hyoso,line.hiritu));
   }
