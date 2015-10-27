@@ -1,4 +1,4 @@
-exports.chushutu = function(url_adress){
+module.exports.chushutu = function(url_adress){
 
 	var exec = require('child_process').exec,cmd;
 	var fs = require('fs');
