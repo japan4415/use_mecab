@@ -132,13 +132,13 @@ chushutu = function(url_adress){
 					if(error != null){
 						//console.log('exec error:'+error);
 					}
+					onebyone();
+					get_meishi(words);
+					count_up(count);
+					count_hiritu(count);
+					//console.log(count);
+					fs.writeFile('1st.json',JSON.stringify(count));
 				}
-				onebyone();
-				get_meishi(words);
-				count_up(count);
-				count_hiritu(count);
-				//console.log(count);
-				fs.writeFile('1st.json',JSON.stringify(count));
 			);
 	});
 }
