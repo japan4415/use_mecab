@@ -143,4 +143,4 @@ chushutu = function(url_adress){
 	});
 }
 
-chushutu("http://qiita.com/phi/items/b5ade0c2ecc58935e046");
+chushutu("http://1210kazu.blog.fc2.com/blog-entry-5.html");

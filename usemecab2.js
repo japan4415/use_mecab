@@ -143,4 +143,4 @@ chushutu = function(url_adress){
 	});
 }
 
-chushutu("http://www.psi-net.co.jp/blog/?p=611");
+chushutu("http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q11111940906");
