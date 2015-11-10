@@ -11,8 +11,8 @@ road_url = function(filename){
   fs.readFileSync(filename,'utf8').toString().split('\n').forEach(function(line){
     url_list.push(line);
   });
+  console.log(url_list);
   return(url_list);
-  console.log("return後");
 }
 
 road_url(filename);
