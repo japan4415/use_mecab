@@ -9,7 +9,7 @@ road_url = function(filename){
   var url_list = [];
 
   fs.readFileSync(filename,'utf8').toString().split('\n').forEach(function(line){
-    url_list.add(line);
+    url_list.push(line);
   });
   return(url_list);
   console.log("return後");
