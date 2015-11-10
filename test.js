@@ -7,13 +7,18 @@ var filename = './urllist';
 
 road_url = function(filename){
   var url_list = [];
-
   fs.readFileSync(filename,'utf8').toString().split('\n').forEach(function(line){
     url_list.push(line);
   });
-  console.log(url_list);
   return(url_list);
 }
 
-road_url(filename);
-console.log(road_url(filename));
+use_curl = function(url){
+  result = null;
+  result = curl(url,function(err){
+    return(curl)
+  });
+  return(result);
+}
+
+console.log(use_curl(road_url(filename)));
