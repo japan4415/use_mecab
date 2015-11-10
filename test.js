@@ -18,7 +18,7 @@ use_curl = function(url){
   result = curl(url,function(err){
     return(curl)
   });
-  cosole.log('before return');
+  console.log('before return');
   return(result);
 }
 
