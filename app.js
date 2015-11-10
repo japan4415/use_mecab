@@ -275,6 +275,6 @@ function main(){
   });
 }
 
-main(arg1,function(){
+main(function(){
   console.log(final_result);
 });
