@@ -278,3 +278,4 @@ function main(){
 main(function(){
   console.log(final_result);
 });
+console.log(final_result);
