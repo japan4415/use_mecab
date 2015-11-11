@@ -41,7 +41,7 @@ function url_score(url){
 async.waterfall([
   function(next){
     var url_list = [];
-    fs.readFile(filename,'utf8').toString().split('\n').forEach(function(line){
+    fs.readFileSync(filename,'utf8').toString().split('\n').forEach(function(line){
       url_list.push(line);
     });
     next(null,url_list);
