@@ -29,8 +29,10 @@ use_curl = function(url){
   return(result);
 }
 
+/*
 async.each(road_url(filename),function(data,next){
   console.log(use_curl(data));
 },function complete(err){
   console.log('all done!');
 });
+*/
