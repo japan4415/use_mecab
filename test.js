@@ -24,7 +24,7 @@ use_curl = function(url){
   return(result);
 }
 
-use_curl(url[0],function(data){
+use_curl(url_list[0],function(data){
   console.log(data);
 });
 
