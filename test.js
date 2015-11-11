@@ -18,6 +18,7 @@ use_curl = function(url){
   result = curl(url,function(err){
     return(this.body)
     console.log(this);
+    console.log('通ってるよ');
   });
   console.log('before return');
   return(result);
