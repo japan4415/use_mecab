@@ -13,24 +13,24 @@ road_url = function(filename){
   return(url_list);
 }
 
+var result = null;
+
 use_curl = function(url){
-  result = null;
-  curl(url,function(err){
-    console.log(this);
-    console.log('通ってるよ');
-  });
-  console.log('before return');
+  async.series([
+    function(next){
+      curl(url,function(err){
+        result = this.body;
+        next();
+      });
+    },function complete(err,results){
+      console.log('完了');
+    }
+  ]);
   return(result);
 }
-var url_list = road_url(filename);
-use_curl(url_list[0],function(data){
-  console.log(data);
-});
 
-/*
 async.each(road_url(filename),function(data,next){
   console.log(use_curl(data));
 },function complete(err){
   console.log('all done!');
 });
-*/
