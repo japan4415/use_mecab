@@ -24,6 +24,8 @@ use_curl = function(url){
   return(result);
 }
 
-road_url(filename).forEach(function(line){
-  console.log(use_curl(line));
+async.each(road_url(filename),function(data,next){
+  console.log(use_curl(data));
+},function complete(err){
+  console.log('all done!');
 });
