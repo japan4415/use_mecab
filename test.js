@@ -29,6 +29,10 @@ use_curl = function(url){
   return(result);
 }
 
+var url_list = road_url(filename);
+
+use_curl(url_list[0]);
+
 /*
 async.each(road_url(filename),function(data,next){
   console.log(use_curl(data));
