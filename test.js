@@ -15,8 +15,7 @@ road_url = function(filename){
 
 use_curl = function(url){
   result = null;
-  result = curl(url,function(err){
-    return(this.body)
+  curl(url,function(err){
     console.log(this);
     console.log('通ってるよ');
   });
