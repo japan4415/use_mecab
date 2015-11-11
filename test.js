@@ -23,7 +23,7 @@ use_curl = function(url){
   console.log('before return');
   return(result);
 }
-
+var url_list = road_url(filename);
 use_curl(url_list[0],function(data){
   console.log(data);
 });
