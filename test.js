@@ -16,7 +16,7 @@ road_url = function(filename){
 use_curl = function(url){
   result = null;
   result = curl(url,function(err){
-    return(body)
+    return(this.body)
   });
   console.log('before return');
   return(result);
