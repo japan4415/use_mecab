@@ -24,8 +24,14 @@ use_curl = function(url){
   return(result);
 }
 
+use_curl(url[0],function(data){
+  console.log(data);
+});
+
+/*
 async.each(road_url(filename),function(data,next){
   console.log(use_curl(data));
 },function complete(err){
   console.log('all done!');
 });
+*/
