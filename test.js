@@ -17,6 +17,7 @@ use_curl = function(url){
   result = null;
   result = curl(url,function(err){
     return(this.body)
+    console.log(this);
   });
   console.log('before return');
   return(result);
