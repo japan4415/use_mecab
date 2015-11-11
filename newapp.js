@@ -46,8 +46,8 @@ async.waterfall([
     });
     next(null,url_list);
   },
-  function(result,next2){
-    async.mapSeries(result,function(data,next){
+  function(result,next){
+    async.mapSeries(result,function(data,next2){
         curl(data,function(err){
           next2(null,this.body);
         });
