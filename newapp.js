@@ -48,13 +48,115 @@ async.waterfall([
   },
   function(result,next){
     async.mapSeries(result,function(data,next2){
-        curl(data,function(err){
-          next2(null,this.body);
-        });
+      curl(data,function(err){
+        next2(null,this.body);
+      });
     },function(err,results){
       next(null,results);
     });
-  }
+  },
+  function(result,next){
+    async.map(result,function(data,next2){
+      cmd = 'echo ' + result + '|mecab';
+      exec(cmd,{timeout:1000},function(error,stdout,stderr){
+        next2(null,stdout);
+      });
+    },function(err,results){
+      next(null,results);
+    });
+  },
+  function(result,next){
+    async.map(result,function(data,next2){
+      var i = 0;
+      var wards = [];
+      data.toString().split('\n').forEach(function(line){
+        line = line.replace(/\w+/,'');
+        //console.log(line);
+        words[i] = new in_words();
+        i2 = 0;
+        line.replace(/\t/,',').split(',').forEach(function(line){
+          switch (i2){
+            case 0:words[i].hyoso = line;
+            case 1:words[i].hinshi = line;
+            case 2:words[i].hinshi1 = line;
+            case 3:words[i].hinshi2 = line;
+            case 4:words[i].hinshi3 = line;
+            case 5:words[i].katuyokei = line;
+            case 6:words[i].katuyogata = line;
+            case 7:words[i].genke = line;
+            case 8:words[i].yomi = line;
+            case 9:words[i].hatuon = line;
+          }
+          i2++;
+        });
+        i++;
+      });
+      next2(null,wards);
+    },function(err,results){
+      next(null,results);
+    });
+  },
+  function(result,next){
+    async.map(result,function(data,next2){
+      var count = [];
+      data.forEach(function(line){
+        var check = 0;
+        if(line.hinshi == "名詞" && line.hyoso != "" && line.hyoso.match(/^[^:/\\.=\[\]\(\)<>"!#;！?%{}'`+\$\*@&|-]/)){
+          count.forEach(function(line2){
+            if(line2.hyoso == line.hyoso){
+              check = 1;
+            }
+          });
+          if(check == 0){
+            count.push(new in_count(line.hyoso));
+          }
+        }
+      });
+      next2('null',count);
+    },function(err,results){
+      next(null,results);
+    });
+  }/*,
+  function(result,next){
+    async.map(result,function(data,next2){
+      data.forEach(function(line){
+        result.forEach(function(line2){
+          if(line.hyoso == line2.hyoso){
+            if(line2.hinshi == "名詞"){
+              line.wcount++;
+              //console.log(line.hyoso + "があったのでカウント");
+            }
+          }
+        });
+      });
+      //console.log(words);
+      //console.log(words[0].hinshi);
+      next2('null',count);
+    }
+  },
+  function(result,next){
+    var j = 0;
+    var goke = 0;
+    result.forEach(function(line){
+      goke = 0;
+      line.forEach(function(line2){
+        goke = line2.wcount;
+      });
+      line.forEach(function(line2){
+        j = 0;
+        count.forEach(function(line3){
+          line3.forEach(function(line4){
+            if(line2.hyoso == line4.hyoso){
+              j++;
+            }
+          });
+        });
+        line2.all_count = j;
+        line2.tfidf = line2.wcount / goke * Math.log(count.length / line2.all_count);
+      });
+    });
+    next('null',result);
+  }*/
 ],function(err,result){
   console.log(result);
 });
