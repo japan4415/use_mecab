@@ -116,7 +116,7 @@ async.waterfall([
     },function(err,results){
       next(null,results);
     });
-  }/*,
+  },
   function(result,next){
     async.map(result,function(data,next2){
       data.forEach(function(line){
@@ -133,7 +133,7 @@ async.waterfall([
       //console.log(words[0].hinshi);
       next2('null',count);
     }
-  },
+  }/*,
   function(result,next){
     var j = 0;
     var goke = 0;
