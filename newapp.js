@@ -59,7 +59,7 @@ async.waterfall([
     async.map(result,function(data,next2){
       cmd = 'echo ' + result + '|mecab';
       exec(cmd,{timeout:1000},function(error,stdout,stderr){
-        console.log('めかぶ');
+        console.log('めかぶ:' + stdout);
         next2(null,stdout);
       });
     },function(err,results){
