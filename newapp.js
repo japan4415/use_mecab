@@ -54,7 +54,7 @@ async.waterfall([
     },function(err,results){
       next(null,results);
     });
-  }/*,
+  },
   function(result,next){
     async.map(result,function(data,next2){
       cmd = 'echo ' + result + '|mecab';
@@ -64,7 +64,7 @@ async.waterfall([
     },function(err,results){
       next(null,results);
     });
-  },
+  }/*,
   function(result,next){
     async.map(result,function(data,next2){
       var i = 0;
